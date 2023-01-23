@@ -22,7 +22,7 @@ class Blogger(models.Model):
 class Post(models.Model):
     """Model representing a blog of post."""
 
-    title = models.CharFields(max_length=100)
+    title = models.CharField(max_length=100)
     post_date = datetime.date
     blogger = models.ForeignKey('Blogger', on_delete=models.SET_NULL, null=True)
     text = models.TextField(max_length=1000, help_text='Enter a text of your post.')
